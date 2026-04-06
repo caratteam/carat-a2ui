@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Dev Server",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "eval \"$(/opt/homebrew/bin/brew shellenv)\" && npx next dev"],
+      "port": 3000
+    }
+  ]
+}
