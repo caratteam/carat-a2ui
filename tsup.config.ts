@@ -26,5 +26,5 @@ export default defineConfig({
   //    from @carat/a2ui in server components — imports automatically become
   //    client references.
   // 2. Ship the design tokens CSS alongside the JS build.
-  onSuccess: `node -e "const fs=require('fs');const p='dist/index.js';fs.writeFileSync(p,'\\"use client\\";\\n'+fs.readFileSync(p,'utf8'))" && cp src/styles/tokens.css dist/tokens.css`,
+  onSuccess: `node -e "const fs=require('fs');const p='dist/index.js';fs.writeFileSync(p,'\\"use client\\";\\n'+fs.readFileSync(p,'utf8'))" && cp src/styles/tokens.css dist/tokens.css && npx @tailwindcss/cli -i ./src/app/globals.css -o ./dist/styles.css --minify`,
 });

@@ -11,7 +11,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./tokens.css": "./dist/tokens.css"
+    "./tokens.css": "./dist/tokens.css",
+    "./styles.css": "./dist/styles.css"
   },
   "files": [
     "dist"
@@ -38,6 +39,7 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
