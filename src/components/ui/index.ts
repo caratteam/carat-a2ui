@@ -33,6 +33,7 @@ export { SkillCard, type SkillCardProps } from "./skill-card";
 export { SceneCard, type SceneCardProps, type SceneSection } from "./scene-card";
 export { SceneCardList, type SceneCardListProps } from "./scene-card-list";
 export { FileCard, type FileCardProps } from "./file-card";
+export { ImagePicker, type ImagePickerItem } from "./image-picker";
 export { HistoryItem, type HistoryItemProps } from "./history-item";
 
 /* ─── Agent Execution ─── */

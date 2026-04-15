@@ -9,7 +9,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 
 const cardVariants: Record<CardVariant, string> = {
   default:
-    "border border-separator-opaque bg-bg-primary shadow-[var(--shadow-sm)]",
+    "border border-separator-opaque bg-bg-primary",
   outlined: "border border-separator-opaque",
   elevated: "bg-bg-primary shadow-[var(--shadow-lg)]",
 };

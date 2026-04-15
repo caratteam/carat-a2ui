@@ -35,7 +35,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             className={cn(
-              "flex h-full w-full rounded-[var(--radius-md)] border bg-background text-label transition-colors duration-[var(--transition-fast)] placeholder:text-placeholder focus:outline-2 focus:outline-primary focus:-outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40",
+              "flex h-full w-full rounded-[var(--radius-xl)] border bg-background text-label transition-colors duration-[var(--transition-fast)] placeholder:text-placeholder focus:outline-2 focus:outline-primary focus:-outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40",
               error ? "border-error" : "border-separator-opaque",
               leftIcon ? "pl-10" : "pl-3",
               rightIcon ? "pr-10" : "pr-3",
@@ -56,7 +56,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         className={cn(
-          "flex w-full rounded-[var(--radius-md)] border bg-background px-3 text-label transition-colors duration-[var(--transition-fast)] placeholder:text-placeholder focus:outline-2 focus:outline-primary focus:-outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40",
+          "flex w-full rounded-[var(--radius-xl)] border bg-background px-3 text-label transition-colors duration-[var(--transition-fast)] placeholder:text-placeholder focus:outline-2 focus:outline-primary focus:-outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40",
           sizeStyles[size],
           error ? "border-error" : "border-separator-opaque",
           className

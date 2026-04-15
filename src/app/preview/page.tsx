@@ -44,6 +44,7 @@ import {
   AudioRenderer,
   HTMLRenderer,
   FileCard,
+  ImagePicker,
   CompositeResult,
   VersionToggle,
   Dropdown,
@@ -562,6 +563,8 @@ export default function PreviewPage() {
                 <FileCard fileName="프로젝트.zip" fileSize="8.2 MB" variant="upload" />
               </div>
             </Section>
+
+            <ImagePickerDemo />
           </div>
         )}
 
@@ -1459,6 +1462,66 @@ export function App() {
         )}
       </div>
     </div>
+  );
+}
+
+/* ── ImagePicker demo ── */
+
+function ImagePickerDemo() {
+  const [single, setSingle] = useState<string>("2");
+  const [multi, setMulti] = useState<string[]>(["b", "d"]);
+  const [card, setCard] = useState<string>("style-a");
+
+  const thumbs = [
+    { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }, { id: "5" },
+  ];
+  const labeled = [
+    { id: "a", label: "1:1" },
+    { id: "b", label: "9:16" },
+    { id: "c", label: "16:9" },
+    { id: "d", label: "4:5" },
+  ];
+  const cards = [
+    { id: "style-a", label: "AI 아트웍 조합", description: "생성형 이미지 기반", badge: "추천" },
+    { id: "style-b", label: "MV 하이라이트", description: "영상 편집 믹스" },
+    { id: "style-c", label: "고화질 업스케일", description: "AI + MV 리마스터" },
+  ];
+
+  return (
+    <>
+      <Section title="ImagePicker — thumb (single)" a2ui>
+        <ImagePicker
+          items={thumbs}
+          value={single}
+          onChange={(v) => setSingle(v as string)}
+        />
+        <p className="text-[length:var(--text-footnote)] text-label-secondary">선택: {single}</p>
+      </Section>
+
+      <Section title="ImagePicker — thumb with labels (multi)">
+        <ImagePicker
+          items={labeled}
+          value={multi}
+          onChange={(v) => setMulti(v as string[])}
+          multiple
+        />
+        <p className="text-[length:var(--text-footnote)] text-label-secondary">
+          선택: {multi.join(", ") || "없음"}
+        </p>
+      </Section>
+
+      <Section title="ImagePicker — card layout">
+        <ImagePicker
+          items={cards}
+          value={card}
+          onChange={(v) => setCard(v as string)}
+          layout="card"
+          aspect="portrait"
+          columns={3}
+          className="max-w-2xl"
+        />
+      </Section>
+    </>
   );
 }
 

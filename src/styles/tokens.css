@@ -1,89 +1,96 @@
 /*
- * Design Tokens — Apple HIG 기준
+ * Design Tokens — Figma "Product Design" 기준
  * Single source of truth for all design values.
- * iOS Human Interface Guidelines 컬러, 타이포, 스페이싱 반영.
+ * 폰트는 Apple 시스템 폰트 유지, 나머지는 Figma 스펙 반영.
  */
 
 /* ─── Colors ─── */
 :root {
-  /* Brand — iOS systemBlue / systemIndigo */
-  --color-primary: #007AFF;
-  --color-primary-hover: #0066D6;
-  --color-primary-light: #E5F1FF;
-  --color-secondary: #5856D6;
-  --color-secondary-hover: #4B49BE;
-  --color-secondary-light: #EEEDF9;
+  /* Brand — Figma primary button blue (#3B82F6), accent (#007AFF) */
+  --color-primary: #3B82F6;
+  --color-primary-hover: #2563EB;
+  --color-primary-light: #EDF6FF;
+  --color-accent: #007AFF;
+  --color-accent-hover: #0066D6;
+  --color-accent-light: #E5F1FF;
+
+  /* Dark CTA (selected chip / dark button) — Figma #171719 */
+  --color-secondary: #171719;
+  --color-secondary-hover: #0A0A0D;
+  --color-secondary-light: #F4F4F5;
 
   /* Neutrals */
   --color-background: #FFFFFF;
-  --color-foreground: #000000;
-  --color-muted: #F2F2F7;
-  --color-muted-foreground: #8E8E93;
-  --color-border: #E0E0E3;
+  --color-foreground: #171719;
+  --color-muted: #F5F5F5;
+  --color-muted-foreground: #52525B;
+  --color-border: #E5E7EB;
 
-  /* iOS Semantic — Labels */
-  --color-label: #000000;
-  --color-label-secondary: rgba(60, 60, 67, 0.60);
-  --color-label-tertiary: rgba(60, 60, 67, 0.30);
-  --color-label-quaternary: rgba(60, 60, 67, 0.18);
+  /* Semantic — Labels (Figma text colors) */
+  --color-label: #171719;
+  --color-label-secondary: rgba(55, 56, 60, 0.60);   /* #37383C @ 60% */
+  --color-label-tertiary: rgba(55, 56, 60, 0.30);    /* #37383C @ 30% */
+  --color-label-quaternary: rgba(55, 56, 60, 0.18);
 
-  /* iOS Semantic — Fills */
-  --color-fill: rgba(120, 120, 128, 0.20);
-  --color-fill-secondary: rgba(120, 120, 128, 0.16);
-  --color-fill-tertiary: rgba(120, 120, 128, 0.12);
+  /* Semantic — Fills (Figma #70737C translucent) */
+  --color-fill: rgba(112, 115, 124, 0.16);
+  --color-fill-secondary: rgba(112, 115, 124, 0.12);
+  --color-fill-tertiary: rgba(112, 115, 124, 0.08);
 
-  /* iOS Semantic — Backgrounds */
+  /* Semantic — Backgrounds */
   --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F2F2F7;
+  --color-bg-secondary: #F7F7F8;     /* Figma sidebar */
   --color-bg-tertiary: #FFFFFF;
-  --color-bg-grouped: #F2F2F7;
+  --color-bg-grouped: #F7F7F8;
   --color-bg-grouped-secondary: #FFFFFF;
 
-  /* iOS Semantic — Separators */
-  --color-separator: rgba(60, 60, 67, 0.16);
-  --color-separator-opaque: #E0E0E3;
+  /* Semantic — Separators */
+  --color-separator: rgba(112, 115, 124, 0.20);
+  --color-separator-opaque: #E5E7EB;
 
-  /* iOS Semantic — Others */
-  --color-placeholder: rgba(60, 60, 67, 0.30);
-  --color-link: #007AFF;
+  /* Semantic — Others */
+  --color-placeholder: rgba(55, 56, 60, 0.60);
+  --color-link: #3B82F6;
 
   /* Semantic Status */
-  --color-success: #34C759;
-  --color-success-light: #E8F9EE;
-  --color-warning: #FF9500;
-  --color-warning-light: #FFF4E5;
-  --color-error: #FF3B30;
-  --color-error-light: #FFEDED;
-  --color-info: #007AFF;
-  --color-info-light: #E5F1FF;
+  --color-success: #00BF40;
+  --color-success-light: #E6F9EC;
+  --color-warning: #F5BD19;
+  --color-warning-light: #FFF7DB;
+  --color-error: #FF3737;
+  --color-error-light: #FFEBEB;
+  --color-info: #3B82F6;
+  --color-info-light: #EDF6FF;
 
-  /* Agent accent */
-  --color-agent: #5856D6;
-  --color-agent-light: #EEEDF9;
+  /* Agent accent — Figma purple avatar */
+  --color-agent: #6F41E7;
+  --color-agent-light: #F0EBFC;
 
-  /* ─── Typography — Apple system font + iOS type scale ─── */
+  /* ─── Typography — Apple system font (유지) ─── */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                "Helvetica Neue", Arial, sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
                   "Helvetica Neue", Arial, sans-serif;
   --font-mono: "SF Mono", ui-monospace, SFMono-Regular, "Menlo", monospace;
 
-  /* iOS Type Scale */
+  /* Type Scale — Figma 10~17px 범위 */
+  --text-caption3: 0.625rem;    /* 10px — timestamp, avatar initials */
   --text-caption2: 0.6875rem;   /* 11px */
-  --text-caption1: 0.75rem;     /* 12px */
-  --text-footnote: 0.8125rem;   /* 13px */
-  --text-subhead: 0.9375rem;    /* 15px */
-  --text-callout: 1rem;         /* 16px */
-  --text-body: 1.0625rem;       /* 17px — iOS default body */
+  --text-caption1: 0.75rem;     /* 12px — section header */
+  --text-footnote: 0.8125rem;   /* 13px — table body/header, btnA desc */
+  --text-subhead: 0.875rem;     /* 14px — sidebar, chips, btnA label */
+  --text-body: 0.9375rem;       /* 15px — chat body, send button */
+  --text-callout: 1rem;         /* 16px — chat input */
+  --text-title4: 1.0625rem;     /* 17px — feature banner */
   --text-title3: 1.25rem;       /* 20px */
   --text-title2: 1.375rem;      /* 22px */
   --text-title1: 1.75rem;       /* 28px */
   --text-large-title: 2.125rem; /* 34px */
 
   /* Line Heights */
-  --leading-tight: 1.2;
-  --leading-normal: 1.41;       /* iOS body default ~24px/17px */
-  --leading-relaxed: 1.6;
+  --leading-tight: 1.2;         /* ~16.8/14, 15.6/13 */
+  --leading-normal: 1.4;        /* ~19.6/14, 18.7/13 */
+  --leading-relaxed: 1.5;       /* chat body 24/16 */
 
   /* Font Weights */
   --weight-regular: 400;
@@ -91,39 +98,42 @@
   --weight-semibold: 600;
   --weight-bold: 700;
 
-  /* ─── Spacing — 8pt grid ─── */
+  /* ─── Spacing ─── */
   --space-0: 0;
   --space-half: 0.125rem;  /* 2px */
   --space-1: 0.25rem;      /* 4px */
   --space-1half: 0.375rem; /* 6px */
   --space-2: 0.5rem;       /* 8px */
   --space-2half: 0.625rem; /* 10px */
-  --space-3: 0.75rem;     /* 12px */
-  --space-4: 1rem;        /* 16px */
-  --space-5: 1.25rem;     /* 20px */
-  --space-6: 1.5rem;      /* 24px */
-  --space-8: 2rem;        /* 32px */
-  --space-10: 2.5rem;     /* 40px */
-  --space-11: 2.75rem;    /* 44px — Apple tap target */
-  --space-12: 3rem;       /* 48px */
-  --space-16: 4rem;       /* 64px */
-  --space-20: 5rem;       /* 80px */
+  --space-3: 0.75rem;      /* 12px */
+  --space-3half: 0.875rem; /* 14px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.25rem;      /* 20px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-8: 2rem;         /* 32px */
+  --space-10: 2.5rem;      /* 40px */
+  --space-11: 2.75rem;     /* 44px */
+  --space-12: 3rem;        /* 48px */
+  --space-16: 4rem;        /* 64px */
+  --space-20: 5rem;        /* 80px */
 
-  /* ─── Radii — iOS standard ─── */
-  --radius-xs: 0.25rem;   /* 4px  — badge, inline code */
-  --radius-sm: 0.5rem;    /* 8px  — chip, small button */
-  --radius-md: 0.625rem;  /* 10px — card, input */
-  --radius-lg: 0.875rem;  /* 14px — large card, sheet */
-  --radius-xl: 1.25rem;   /* 20px — modal */
-  --radius-2xl: 1.5rem;   /* 24px — large modal */
+  /* ─── Radii — Figma scale (6, 8, 10, 12, 14, 20, 24) ─── */
+  --radius-xs: 0.25rem;    /* 4px */
+  --radius-sm: 0.375rem;   /* 6px  — sidebar item */
+  --radius-md: 0.5rem;     /* 8px  — segment tab, small chip */
+  --radius-lg: 0.625rem;   /* 10px — card, chip, btnA */
+  --radius-xl: 0.75rem;    /* 12px — url input */
+  --radius-2xl: 0.875rem;  /* 14px — upload tile */
+  --radius-pill: 1.25rem;  /* 20px — pill button */
+  --radius-3xl: 1.5rem;    /* 24px — chat input outer */
   --radius-full: 9999px;
 
-  /* ─── Shadows — iOS depth ─── */
+  /* ─── Shadows — 더 은은하게 ─── */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.20);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
 
   /* ─── Transitions ─── */
   --transition-fast: 150ms ease-out;
@@ -141,62 +151,65 @@
   --z-toast: 500;
 
   /* ─── Sizing ─── */
-  --tap-target-min: 2.75rem; /* 44px — Apple HIG minimum */
+  --tap-target-min: 2.75rem;    /* 44px */
   --sidebar-width: 260px;
-  --input-height-sm: 2.125rem;  /* 34px */
-  --input-height-md: 2.75rem;   /* 44px */
-  --input-height-lg: 3.125rem;  /* 50px */
+  --input-height-sm: 2rem;      /* 32px — 분석하기 버튼 */
+  --input-height-md: 2.3125rem; /* 37px — chip */
+  --input-height-lg: 2.8125rem; /* 45px — btnA */
 }
 
-/* ─── Dark Mode — iOS system colors ─── */
-/* Auto mode (OS preference) */
+/* ─── Dark Mode ─── */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --color-primary: #0A84FF;
-    --color-primary-hover: #409CFF;
+    --color-primary: #60A5FA;
+    --color-primary-hover: #93C5FD;
     --color-primary-light: #1A3A5C;
-    --color-secondary: #5E5CE6;
-    --color-secondary-hover: #7D7AFF;
-    --color-secondary-light: #252449;
+    --color-accent: #0A84FF;
+    --color-accent-hover: #409CFF;
+    --color-accent-light: #1A3A5C;
 
-    --color-background: #000000;
-    --color-foreground: #FFFFFF;
-    --color-muted: #1C1C1E;
-    --color-muted-foreground: #ABABAB;
-    --color-border: #2C2C2E;
+    --color-secondary: #FAFAFA;
+    --color-secondary-hover: #E4E4E7;
+    --color-secondary-light: #27272A;
 
-    --color-label: #FFFFFF;
-    --color-label-secondary: rgba(235, 235, 245, 0.60);
-    --color-label-tertiary: rgba(235, 235, 245, 0.30);
-    --color-label-quaternary: rgba(235, 235, 245, 0.18);
+    --color-background: #0B0B0D;
+    --color-foreground: #FAFAFA;
+    --color-muted: #18181B;
+    --color-muted-foreground: #A1A1AA;
+    --color-border: #27272A;
 
-    --color-fill: rgba(120, 120, 128, 0.36);
-    --color-fill-secondary: rgba(120, 120, 128, 0.32);
-    --color-fill-tertiary: rgba(120, 120, 128, 0.24);
+    --color-label: #FAFAFA;
+    --color-label-secondary: rgba(244, 244, 245, 0.60);
+    --color-label-tertiary: rgba(244, 244, 245, 0.30);
+    --color-label-quaternary: rgba(244, 244, 245, 0.18);
 
-    --color-bg-primary: #000000;
-    --color-bg-secondary: #1C1C1E;
-    --color-bg-tertiary: #2C2C2E;
-    --color-bg-grouped: #000000;
-    --color-bg-grouped-secondary: #1C1C1E;
+    --color-fill: rgba(112, 115, 124, 0.32);
+    --color-fill-secondary: rgba(112, 115, 124, 0.24);
+    --color-fill-tertiary: rgba(112, 115, 124, 0.16);
 
-    --color-separator: rgba(84, 84, 88, 0.36);
-    --color-separator-opaque: #2C2C2E;
+    --color-bg-primary: #0B0B0D;
+    --color-bg-secondary: #161618;
+    --color-bg-tertiary: #1C1C1F;
+    --color-bg-grouped: #0B0B0D;
+    --color-bg-grouped-secondary: #161618;
 
-    --color-placeholder: rgba(235, 235, 245, 0.30);
-    --color-link: #0A84FF;
+    --color-separator: rgba(244, 244, 245, 0.16);
+    --color-separator-opaque: #27272A;
 
-    --color-success: #30D158;
+    --color-placeholder: rgba(244, 244, 245, 0.40);
+    --color-link: #60A5FA;
+
+    --color-success: #34D058;
     --color-success-light: #0D3B1E;
-    --color-warning: #FF9F0A;
-    --color-warning-light: #3D2A00;
-    --color-error: #FF453A;
+    --color-warning: #FACC33;
+    --color-warning-light: #3D2E00;
+    --color-error: #FF5A5A;
     --color-error-light: #3D1210;
-    --color-info: #0A84FF;
+    --color-info: #60A5FA;
     --color-info-light: #1A3A5C;
 
-    --color-agent: #5E5CE6;
-    --color-agent-light: #252449;
+    --color-agent: #9B75F0;
+    --color-agent-light: #2A1F52;
 
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.20);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.30);
@@ -208,51 +221,55 @@
 
 /* Manual dark mode (class-based) */
 :root.dark {
-  --color-primary: #0A84FF;
-  --color-primary-hover: #409CFF;
+  --color-primary: #60A5FA;
+  --color-primary-hover: #93C5FD;
   --color-primary-light: #1A3A5C;
-  --color-secondary: #5E5CE6;
-  --color-secondary-hover: #7D7AFF;
-  --color-secondary-light: #252449;
+  --color-accent: #0A84FF;
+  --color-accent-hover: #409CFF;
+  --color-accent-light: #1A3A5C;
 
-  --color-background: #000000;
-  --color-foreground: #FFFFFF;
-  --color-muted: #1C1C1E;
-  --color-muted-foreground: #ABABAB;
-  --color-border: #2C2C2E;
+  --color-secondary: #FAFAFA;
+  --color-secondary-hover: #E4E4E7;
+  --color-secondary-light: #27272A;
 
-  --color-label: #FFFFFF;
-  --color-label-secondary: rgba(235, 235, 245, 0.60);
-  --color-label-tertiary: rgba(235, 235, 245, 0.30);
-  --color-label-quaternary: rgba(235, 235, 245, 0.18);
+  --color-background: #0B0B0D;
+  --color-foreground: #FAFAFA;
+  --color-muted: #18181B;
+  --color-muted-foreground: #A1A1AA;
+  --color-border: #27272A;
 
-  --color-fill: rgba(120, 120, 128, 0.36);
-  --color-fill-secondary: rgba(120, 120, 128, 0.32);
-  --color-fill-tertiary: rgba(120, 120, 128, 0.24);
+  --color-label: #FAFAFA;
+  --color-label-secondary: rgba(244, 244, 245, 0.60);
+  --color-label-tertiary: rgba(244, 244, 245, 0.30);
+  --color-label-quaternary: rgba(244, 244, 245, 0.18);
 
-  --color-bg-primary: #000000;
-  --color-bg-secondary: #1C1C1E;
-  --color-bg-tertiary: #2C2C2E;
-  --color-bg-grouped: #000000;
-  --color-bg-grouped-secondary: #1C1C1E;
+  --color-fill: rgba(112, 115, 124, 0.32);
+  --color-fill-secondary: rgba(112, 115, 124, 0.24);
+  --color-fill-tertiary: rgba(112, 115, 124, 0.16);
 
-  --color-separator: rgba(84, 84, 88, 0.36);
-  --color-separator-opaque: #2C2C2E;
+  --color-bg-primary: #0B0B0D;
+  --color-bg-secondary: #161618;
+  --color-bg-tertiary: #1C1C1F;
+  --color-bg-grouped: #0B0B0D;
+  --color-bg-grouped-secondary: #161618;
 
-  --color-placeholder: rgba(235, 235, 245, 0.30);
-  --color-link: #0A84FF;
+  --color-separator: rgba(244, 244, 245, 0.16);
+  --color-separator-opaque: #27272A;
 
-  --color-success: #30D158;
+  --color-placeholder: rgba(244, 244, 245, 0.40);
+  --color-link: #60A5FA;
+
+  --color-success: #34D058;
   --color-success-light: #0D3B1E;
-  --color-warning: #FF9F0A;
-  --color-warning-light: #3D2A00;
-  --color-error: #FF453A;
+  --color-warning: #FACC33;
+  --color-warning-light: #3D2E00;
+  --color-error: #FF5A5A;
   --color-error-light: #3D1210;
-  --color-info: #0A84FF;
+  --color-info: #60A5FA;
   --color-info-light: #1A3A5C;
 
-  --color-agent: #5E5CE6;
-  --color-agent-light: #252449;
+  --color-agent: #9B75F0;
+  --color-agent-light: #2A1F52;
 
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.20);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.30);

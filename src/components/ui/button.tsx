@@ -1,7 +1,7 @@
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost" | "tinted" | "danger";
+type Variant = "primary" | "secondary" | "outline" | "ghost" | "tinted" | "danger" | "dark";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,6 +16,8 @@ const variantStyles: Record<Variant, string> = {
   primary:
     "bg-primary text-white hover:bg-primary-hover active:opacity-80",
   secondary:
+    "bg-fill-tertiary text-label hover:bg-fill-secondary active:opacity-80",
+  dark:
     "bg-secondary text-white hover:bg-secondary-hover active:opacity-80",
   tinted:
     "bg-primary-light text-primary hover:opacity-80 active:opacity-60",
@@ -28,9 +30,9 @@ const variantStyles: Record<Variant, string> = {
 };
 
 const sizeStyles: Record<Size, string> = {
-  sm: "h-[var(--input-height-sm)] px-3 text-[length:var(--text-footnote)] gap-1.5 rounded-[var(--radius-sm)]",
-  md: "h-[var(--input-height-md)] px-4 text-[length:var(--text-subhead)] gap-2 rounded-[var(--radius-md)]",
-  lg: "h-[var(--input-height-lg)] px-6 text-[length:var(--text-body)] gap-2 rounded-[var(--radius-md)]",
+  sm: "h-8 px-4 text-[length:var(--text-footnote)] gap-1.5 rounded-[var(--radius-pill)]",
+  md: "h-[37px] px-5 text-[length:var(--text-subhead)] gap-2 rounded-[var(--radius-pill)]",
+  lg: "h-[45px] px-5 text-[length:var(--text-body)] gap-2 rounded-[var(--radius-pill)]",
 };
 
 const iconOnlySizeStyles: Record<Size, string> = {
@@ -58,7 +60,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center font-semibold transition-all duration-[var(--transition-fast)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:pointer-events-none disabled:opacity-40 select-none",
+          "inline-flex items-center justify-center font-medium transition-all duration-[var(--transition-fast)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:pointer-events-none disabled:opacity-40 select-none",
           variantStyles[variant],
           iconOnly ? iconOnlySizeStyles[size] : sizeStyles[size],
           fullWidth && "w-full",
