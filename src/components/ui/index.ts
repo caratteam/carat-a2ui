@@ -1,6 +1,13 @@
 /* ─── Icon ─── */
 export { Icon, type IconProps, type IconWeight } from "./icon";
-export { IconGallery } from "./icon-gallery";
+// IconGallery 는 «이 레포의 /preview 문서 페이지 전용» 개발자 도구다. 라이브러리 엔트리에서
+// 내보내면 icon-gallery.tsx → lib/icon-registry.ts 가 @phosphor-icons/react 루트 배럴에서
+// 아이콘 1,512개를 한 문장으로 named import 하고, tsup 이 dependencies 를 external 로 두므로
+// 그 import 문이 dist/index.js:5 에 그대로 남는다. 소비자 번들러가 이걸 해석하면서
+// 아이콘 모듈 1,512개(각각 모듈 스코프에서 forwardRef 호출 = 부수효과라 트리셰이킹 불가)가
+// 전부 끌려온다 — carat.im 홈에서 gzip 978KB / 원본 4.76MB 단일 청크로 실측됐다(2026-08-27).
+// 필요한 곳(preview/page.tsx)에서 파일 경로로 직접 import 한다.
+// export { IconGallery } from "./icon-gallery";
 
 /* ─── Primitives ─── */
 export { Button, type ButtonProps } from "./button";

@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/cn";
+// IconGallery 는 라이브러리 엔트리(@/components/ui)에서 제외됐다 — 아이콘 1,512개가
+// 소비자 번들에 딸려오기 때문(components/ui/index.ts 주석 참조). 문서 페이지에서만 직접 import.
+import { IconGallery } from "@/components/ui/icon-gallery";
 import { useTheme } from "@/lib/theme";
 import {
   Button,
   Icon,
-  IconGallery,
   Input,
   Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter,
   Badge,
